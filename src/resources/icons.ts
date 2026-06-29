@@ -83,7 +83,7 @@ export const iconLibrary: Record<string, IconType> = {
   flutter: SiFlutter,
   laravel: SiLaravel,
   express: SiExpress,
-  database: SiJavascript, // fallback icon for database
+  database: SiJavascript,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
