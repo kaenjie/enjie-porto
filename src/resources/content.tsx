@@ -14,9 +14,9 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Mutiara Angelita",
   lastName: "Muhaeni",
-  name: `Enjie`,
+  name: `Mutiara Angel`,
   role: "UI/UX Design, Frontend, and Mobile Development",
-  avatar: "/images/profil.jpg",
+  avatar: "/images/other/profil.jpg",
   email: "angelmuhaeni@gmail.com",
   location: "Asia/Jakarta",
   languages: ["Indonesia"],
@@ -24,8 +24,15 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Let's Connect and Collaborate!</>,
+  description: (
+    <>
+      Open for internship opportunities, freelance projects, or just chatting
+      about Frontend Development and UI/UX Design.
+    </>
+  ),
+  buttonText: "Let's Talk",
+  link: `mailto:${person.email}`,
 };
 
 const social: Social = [
@@ -67,7 +74,12 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Designing intuitive experiences and building them into reality</>,
+  headline: (
+    <>
+      Transforming ideas into responsive, intuitive, and user-centered digital
+      products
+    </>
+  ),
   featured: {
     display: true,
     title: (
@@ -79,16 +91,17 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system", //TODO ini nanti ganti ke project utama
+    href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Angel, an Information Systems undergraduate with a strong interest in{" "}
+      I'm Angel, a developer who designs and a designer who codes. Leveraging my
+      dual interest in{" "}
       <Text as="span" size="xl" weight="strong">
-        UI UX Design and Software Development
+        Frontend Development and UI/UX Design
       </Text>
-      . I build user centered web and mobile applications that balance
-      thoughtful design and clean implementation.
+      , I build intuitive web and mobile solutions that solve real-world
+      problems through clean implementation.
     </>
   ),
 };
@@ -107,7 +120,7 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://calendar.google.com/calendar",
   },
 
   intro: {
@@ -115,15 +128,20 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Angel is an active Information Systems undergraduate with a strong focus
-        on UI UX driven software engineering. She enjoys bridging design and
-        code by translating user needs into intuitive interfaces and functional
-        digital products.
+        Hi! I'm {person.firstName} {person.lastName}, an Information Systems
+        undergraduate at State University of Surabaya with a strong interest in
+        Frontend Development and UI/UX Design. I enjoy at transforming ideas
+        into responsive, intuitive, and user-centered digital products while
+        continuously expanding my skills across the software development
+        lifecycle.
         <br />
         <br />
-        Her work centers on building user friendly web and mobile applications
-        through well structured user flows, clean visual design, and thoughtful
-        frontend implementation.
+        My primary expertise lies in React.js, Next.js, Tailwind CSS, Flutter,
+        and Figma, complemented by hands-on experience in backend development
+        using Node.js, Express.js, Laravel, PostgreSQL, and REST APIs. She
+        thoroughly enjoys collaborating with cross-functional teams to build
+        products that are both highly functional and deliver a great user
+        experience.
       </>
     ),
   },
@@ -134,71 +152,77 @@ const about: About = {
     experiences: [
       {
         company: "PT. Greatsoft Solusi Indonesia",
-        timeframe: "2024",
-        role: "Junior Software Engineer Intern",
+        timeframe: "Dec 2025 - Apr 2026",
+        role: "Junior Fullstack Developer",
         achievements: [
           <>
-            Contributed to the development of a PTPN mobile application using
-            Flutter, implementing features with SQLite for local data handling
-            and offline support.
+            Supported the development and maintenance of applications and
+            systems with an emphasis on user interface, user flow, and
+            usability.
           </>,
           <>
-            Built a Material Tracking System mobile application covering
-            Purchase Order, Delivery Order, approval workflows, and tracking
-            processes.
+            Designed and refined UI UX solutions for internal applications using
+            Figma, including user flows, wireframes, and interactive prototypes.
           </>,
           <>
-            Designed multiple UI UX projects across mobile, tablet, and web
-            platforms using Figma, focusing on clear user flows and usability.
+            Translated user and business requirements into structured and
+            practical design solutions in collaboration with the team.
           </>,
           <>
-            Supported development workflows using Git, GitHub, and Odoo system
-            management.
+            Contributed to the Annual Meeting 2025 organizing committee under
+            the Creative and Documentation division, including visual content
+            editing and event documentation through photo and video capture
+            using cameras and mobile devices.
           </>,
         ],
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            src: "/images/other/annual-meeting.jpeg",
+            alt: "Work image",
             width: 16,
             height: 9,
           },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ], //TODO ganti fotoo
+        ],
       },
       {
         company: "PT. Greatsoft Solusi Indonesia",
-        timeframe: "2025",
-        role: "Junior Software Engineer (Contract)",
+        timeframe: "Jun - Dec 2025",
+        role: "Full-Stack Developer Intern",
         achievements: [
           <>
-            Continued supporting internal application development with a UI UX
-            focused approach to improve usability and interface clarity.
+            Contributed to a PTPN mobile application project, implementing
+            features that utilized SQLite for local data storage and application
+            functionality.
           </>,
           <>
-            Designed and refined wireframes and interactive prototypes for
-            internal systems using Figma.
+            Developed a Material Tracking System mobile application, handling
+            features such as Purchase Order, Delivery Order, Approval workflow,
+            and tracking processes.
+          </>,
+          <>
+            Gained hands-on experience in Odoo system management, supporting
+            operational and business workflows.
+          </>,
+          <>
+            Designed 5+ UI UX projects across mobile, tablet, and web platforms,
+            delivering complete and complex user flows aligned with user and
+            business requirements.
           </>,
         ],
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
+            src: "/images/other/sertifikat-intern.jpeg",
+            alt: "Work image",
+            width: 12,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
+            src: "/images/other/intern-visit.jpeg",
+            alt: "Work image",
+            width: 12,
             height: 9,
           },
-        ], //TODO ganti fotoo
+        ],
       },
     ],
   },
@@ -208,8 +232,8 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "Universitas Negeri Surabaya",
-        description: <>Information Systems undergraduate student.</>,
+        name: "State University of Surabaya",
+        description: <>Undergraduate, Information Systems</>,
       },
       {
         name: "Futuremakers Youth Employability Program Scholarship",
@@ -228,56 +252,73 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "UI UX Design",
+        title: "Frontend Development",
         description: (
           <>
-            Designing user centered interfaces through structured user flows,
-            wireframes, and interactive prototypes.
-          </>
-        ),
-        tags: [{ name: "Figma", icon: "figma" }],
-      },
-      {
-        title: "Frontend Web Development",
-        description: (
-          <>
-            Building responsive and maintainable web interfaces with strong
-            attention to UI consistency and design implementation.
+            Crafting responsive, high-performance web and mobile interfaces
+            using modern client-side technologies.
           </>
         ),
         tags: [
-          { name: "React.js", icon: "react" },
-          { name: "Tailwind CSS", icon: "tailwind" },
-          { name: "Next.js", icon: "nextjs" },
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "JavaScript", icon: "javascript" },
           { name: "TypeScript", icon: "typescript" },
+          { name: "React.js", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Tailwind CSS", icon: "tailwind" },
+          { name: "Flutter", icon: "flutter" },
         ],
       },
       {
-        title: "Mobile & Backend Development",
+        title: "Backend Development",
         description: (
           <>
-            Supporting mobile applications and backend services to deliver
-            complete product flows.
+            Architecting scalable server-side logic, managing server operations,
+            and building robust RESTful APIs.
           </>
         ),
         tags: [
-          { name: "Flutter", icon: "flutter" },
-          { name: "SQLite", icon: "database" },
-          { name: "Laravel", icon: "laravel" },
+          { name: "Node.js", icon: "nodejs" },
           { name: "Express.js", icon: "express" },
+          { name: "Laravel", icon: "laravel" },
+        ],
+      },
+      {
+        title: "Database Management",
+        description: (
+          <>
+            Designing efficient data structures, managing relational and
+            non-relational database systems securely.
+          </>
+        ),
+        tags: [
+          { name: "PostgreSQL", icon: "postgresql" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "SQLite", icon: "database" },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "Supabase", icon: "supabase" },
+        ],
+      },
+      {
+        title: "Tools & Workflow",
+        description: (
+          <>
+            Utilizing modern development tools, version control, and API
+            platforms to streamline workflows.
+          </>
+        ),
+        tags: [
+          { name: "Figma", icon: "figma" },
+          { name: "Git", icon: "git" },
+          { name: "GitHub", icon: "github" },
+          { name: "Postman", icon: "postman" },
+          { name: "Swagger", icon: "swagger" },
+          { name: "VS Code", icon: "vscode" },
         ],
       },
     ],
   },
-};
-
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const certifications: Certifications = {
@@ -293,7 +334,10 @@ const certifications: Certifications = {
       date: "2024",
       description: (
         <>
-          Artikel mendalam tentang mengapa sertifikasi IT/TI penting bagi seorang programmer dalam mengembangkan karir dan meningkatkan kredibilitas profesional. Membahas berbagai sertifikasi industri dan dampaknya terhadap pertumbuhan skill.
+          Artikel mendalam tentang mengapa sertifikasi IT/TI penting bagi
+          seorang programmer dalam mengembangkan karir dan meningkatkan
+          kredibilitas profesional. Membahas berbagai sertifikasi industri dan
+          dampaknya terhadap pertumbuhan skill.
         </>
       ),
       image: "/images/certifications/medium-article.jpg",
@@ -307,7 +351,9 @@ const certifications: Certifications = {
       date: "2024",
       description: (
         <>
-          Expertise dalam membangun responsive dan maintainable web interfaces dengan React.js, Next.js, TypeScript, dan Tailwind CSS. Fokus pada UI consistency dan clean code implementation.
+          Expertise dalam membangun responsive dan maintainable web interfaces
+          dengan React.js, Next.js, TypeScript, dan Tailwind CSS. Fokus pada UI
+          consistency dan clean code implementation.
         </>
       ),
       image: "/images/certifications/frontend-cert.jpg",
@@ -321,7 +367,9 @@ const certifications: Certifications = {
       date: "2024",
       description: (
         <>
-          Expertise dalam mobile application development menggunakan Flutter framework, termasuk state management, UI implementation, dan local database integration dengan SQLite.
+          Expertise dalam mobile application development menggunakan Flutter
+          framework, termasuk state management, UI implementation, dan local
+          database integration dengan SQLite.
         </>
       ),
       image: "/images/certifications/mobile-cert.jpg",
@@ -335,7 +383,9 @@ const certifications: Certifications = {
       date: "2024",
       description: (
         <>
-          Expertise dalam user-centered design melalui structured user flows, wireframing, prototyping, dan interactive design implementation di berbagai platform.
+          Expertise dalam user-centered design melalui structured user flows,
+          wireframing, prototyping, dan interactive design implementation di
+          berbagai platform.
         </>
       ),
       image: "/images/certifications/design-cert.jpg",
@@ -405,4 +455,13 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, certifications, work, gallery };
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  certifications,
+  work,
+  gallery,
+};

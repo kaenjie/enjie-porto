@@ -33,7 +33,18 @@ import {
   SiFlutter,
   SiLaravel,
   SiExpress,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiGit,
+  SiPostman,
+  SiSwagger,
 } from "react-icons/si";
+
+import { VscVscode } from "react-icons/vsc";
 
 import {
   FaDiscord,
@@ -83,7 +94,16 @@ export const iconLibrary: Record<string, IconType> = {
   flutter: SiFlutter,
   laravel: SiLaravel,
   express: SiExpress,
-  database: SiJavascript,
+  html: SiHtml5,
+  css: SiCss3,
+  nodejs: SiNodedotjs,
+  postgresql: SiPostgresql,
+  mysql: SiMysql,
+  mongodb: SiMongodb,
+  git: SiGit,
+  postman: SiPostman,
+  swagger: SiSwagger,
+  vscode: VscVscode,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,

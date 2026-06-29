@@ -40,6 +40,10 @@ export type Newsletter = {
   title: React.ReactNode;
   /** Description of the newsletter */
   description: React.ReactNode;
+  /** Text for the button in the newsletter section */
+  buttonText: string;
+  /** Link for the button in the newsletter section */
+  link: string;
 };
 
 /**
