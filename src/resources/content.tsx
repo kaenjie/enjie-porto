@@ -232,16 +232,23 @@ const about: About = {
     institutions: [
       {
         name: "State University of Surabaya",
-        description: <>Undergraduate, Information Systems</>,
+        role: "Bachelor of Information Systems",
+        year: "2023 — Present",
+        description: "",
       },
       {
         name: "Futuremakers Youth Employability Program Scholarship",
-        description: (
-          <>
-            Participated in the Web Programming track, gaining hands on
-            experience in modern web development and backend implementation.
-          </>
-        ),
+        role: "Web Programming Scholar",
+        year: "Jan - Mar 2026",
+        description:
+          "Participated in the Web Programming track, gaining hands-on experience in modern web development and backend implementation.",
+      },
+      {
+        name: "Coding Camp powered By DBS Foundation",
+        role: "Full-Stack Web Developer Cohort",
+        year: "May - Jun 2026",
+        description:
+          "Completed an intensive, industry-aligned full-stack web development program organized by Dicoding Indonesia & DBS Foundation, combining structured self-paced learning with live instructor-led sessions.",
       },
     ],
   },
