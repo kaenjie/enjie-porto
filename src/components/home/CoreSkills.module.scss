@@ -1,0 +1,215 @@
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1.5px solid transparent !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+
+    &::before {
+      opacity: 0.05;
+    }
+  }
+
+  // Frontend - Blue/Cyan
+  &.frontend {
+    border-color: var(--color-border-neutral-alpha-medium) !important;
+
+    &:hover {
+      border-color: #0ea5e9 !important;
+      background: linear-gradient(
+        135deg,
+        rgba(14, 165, 233, 0.05) 0%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Mobile - Green/Teal
+  &.mobile {
+    border-color: var(--color-border-neutral-alpha-medium) !important;
+
+    &:hover {
+      border-color: #10b981 !important;
+      background: linear-gradient(
+        135deg,
+        rgba(16, 185, 129, 0.05) 0%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Design - Purple/Pink
+  &.design {
+    border-color: var(--color-border-neutral-alpha-medium) !important;
+
+    &:hover {
+      border-color: #a855f7 !important;
+      background: linear-gradient(
+        135deg,
+        rgba(168, 85, 247, 0.05) 0%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Backend - Orange/Yellow
+  &.backend {
+    border-color: var(--color-border-neutral-alpha-medium) !important;
+
+    &:hover {
+      border-color: #f97316 !important;
+      background: linear-gradient(
+        135deg,
+        rgba(249, 115, 22, 0.05) 0%,
+        transparent 100%
+      );
+    }
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  font-weight: 600;
+
+  // Frontend - Blue
+  &.frontend {
+    background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+    color: white;
+    box-shadow: 0 8px 16px rgba(14, 165, 233, 0.3);
+
+    .skillCard:hover & {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(14, 165, 233, 0.4);
+    }
+  }
+
+  // Mobile - Green
+  &.mobile {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+    color: white;
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+
+    .skillCard:hover & {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+    }
+  }
+
+  // Design - Purple
+  &.design {
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+    color: white;
+    box-shadow: 0 8px 16px rgba(168, 85, 247, 0.3);
+
+    .skillCard:hover & {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(168, 85, 247, 0.4);
+    }
+  }
+
+  // Backend - Orange
+  &.backend {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+    color: white;
+    box-shadow: 0 8px 16px rgba(249, 115, 22, 0.3);
+
+    .skillCard:hover & {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  // Frontend tags
+  &.frontend {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+
+    .skillCard:hover & {
+      background: rgba(14, 165, 233, 0.15);
+      border-color: rgba(14, 165, 233, 0.3);
+    }
+  }
+
+  // Mobile tags
+  &.mobile {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+
+    .skillCard:hover & {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+  }
+
+  // Design tags
+  &.design {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+
+    .skillCard:hover & {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: rgba(168, 85, 247, 0.3);
+    }
+  }
+
+  // Backend tags
+  &.backend {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+
+    .skillCard:hover & {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: rgba(249, 115, 22, 0.3);
+    }
+  }
+}

@@ -1,0 +1,205 @@
+.tabsContainer {
+  border: 1px solid var(--color-border-neutral-alpha-medium);
+  background: linear-gradient(
+    135deg,
+    var(--color-background-neutral-alpha-weak) 0%,
+    var(--color-background-neutral-alpha-medium) 100%
+  );
+
+  &:hover {
+    border-color: var(--color-border-neutral-alpha-strong);
+  }
+}
+
+.certificationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    gap: 8px;
+  }
+}
+
+.categoryTab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-neutral-alpha-medium);
+  background: var(--color-background-neutral-alpha-weak);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-neutral-strong);
+
+  &:hover {
+    background: var(--color-background-neutral-alpha-medium);
+    border-color: var(--color-border-neutral-alpha-strong);
+  }
+
+  &.active {
+    background: var(--color-background-brand-strong);
+    border-color: var(--color-border-brand-strong);
+    color: var(--color-text-on-brand);
+  }
+
+  @media (max-width: 640px) {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+.certificationCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border-neutral-alpha-medium) !important;
+
+  &:hover {
+    border-color: var(--color-border-brand-medium) !important;
+    transform: translateY(-12px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.certificationImageContainer {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.8) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.08) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 0;
+  }
+
+  .certificationCard:hover & img {
+    transform: scale(1.08);
+  }
+}
+
+.certContent {
+  background: linear-gradient(
+    180deg,
+    var(--color-background-neutral-alpha-weak) 0%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    var(--color-background-brand-alpha-weak) 0%,
+    var(--color-background-brand-alpha-medium) 100%
+  );
+  color: var(--color-text-brand-medium);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  width: fit-content;
+  border: 1px solid var(--color-border-brand-alpha-medium);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.dateBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--color-background-neutral-alpha-medium);
+  color: var(--color-text-neutral-medium);
+  font-size: 12px;
+  font-weight: 500;
+  width: fit-content;
+  border: 1px solid var(--color-border-neutral-alpha-weak);
+}
+
+.description {
+  line-height: 1.6;
+  color: var(--color-text-neutral-strong);
+  margin-top: 8px;
+}
+
+.issuerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--color-text-neutral-medium);
+
+  .issuer {
+    font-weight: 500;
+    color: var(--color-text-neutral-strong);
+  }
+
+  .date {
+    color: var(--color-text-neutral-weak);
+    font-size: 12px;
+  }
+}
+
+.emptyState {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--color-text-neutral-weak);
+}
