@@ -1,6 +1,5 @@
 import {
   About,
-  Blog,
   Certifications,
   Gallery,
   Home,

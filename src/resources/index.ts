@@ -4,7 +4,6 @@ export {
   newsletter,
   home,
   about,
-  blog,
   certifications,
   work,
   gallery,
