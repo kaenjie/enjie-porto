@@ -31,7 +31,7 @@ export const Footer = () => {
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
           <Text onBackground="neutral-weak">
-            / Build your portfolio with love
+            / Build this portfolio with love
           </Text>
         </Text>
         <Row gap="16">
