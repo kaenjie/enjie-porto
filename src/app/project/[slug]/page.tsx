@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
+import { getPosts, formatProjectRange } from "@/utils/utils";
 import {
   Meta,
   Schema,
-  AvatarGroup,
   Button,
   Column,
   Flex,
@@ -12,8 +11,10 @@ import {
   Text,
   SmartLink,
   Row,
-  Avatar,
   Line,
+  RevealFx,
+  Badge,
+  Tag,
 } from "@once-ui-system/core";
 import { baseURL, about, person, project } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
@@ -71,11 +72,6 @@ export default async function Project({
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
     <Column as="section" maxWidth="m" horizontal="center" gap="l">
       <Schema
@@ -96,38 +92,75 @@ export default async function Project({
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column maxWidth="s" gap="16" horizontal="center" align="center">
-        <SmartLink href="/project">
-          <Text variant="label-strong-m">Projects</Text>
-        </SmartLink>
-        <Text
-          variant="body-default-xs"
-          onBackground="neutral-weak"
-          marginBottom="12"
-        >
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+
+      {/* SECTION HEADER: Judul & Navigasi Atas */}
+      <Column
+        fillWidth
+        gap="16"
+        horizontal="center"
+        align="center"
+        marginTop="24"
+      >
+        {post.metadata.type && (
+          <RevealFx
+            speed={0.5}
+            trigger
+            style={{ display: "inline-flex", width: "auto" }}
+          >
+            <Badge
+              background="brand-alpha-weak"
+              paddingX="12"
+              paddingY="4"
+              onBackground="neutral-strong"
+              textVariant="label-default-s"
+            >
+              <Row paddingY="2" gap="8" vertical="center">
+                <span
+                  style={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--brand-solid-strong)",
+                  }}
+                />
+                <strong style={{ textTransform: "capitalize" }}>
+                  {post.metadata.type} Project
+                </strong>
+              </Row>
+            </Badge>
+          </RevealFx>
+        )}
+
+        <Text variant="body-default-xs" onBackground="neutral-weak">
+          {formatProjectRange(post.metadata.startDate, post.metadata.endDate)}
         </Text>
-        <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+
+        <Heading variant="display-strong-m" style={{ textAlign: "center" }}>
+          {post.metadata.title}
+        </Heading>
       </Column>
-      <Row marginBottom="32" horizontal="center">
-        <Row gap="16" vertical="center">
-          {post.metadata.team && (
-            <AvatarGroup reverse avatars={avatars} size="s" />
-          )}
-          <Text variant="label-default-m" onBackground="brand-weak">
-            {post.metadata.team?.map((member, idx) => (
-              <span key={idx}>
-                {idx > 0 && (
-                  <Text as="span" onBackground="neutral-weak">
-                    ,{" "}
-                  </Text>
-                )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
-              </span>
-            ))}
-          </Text>
+
+      {/* TECH STACK */}
+      {post.metadata.tags && post.metadata.tags.length > 0 && (
+        <Row wrap gap="8" vertical="center" horizontal="center">
+          {post.metadata.tags.map((tag: string, index: number) => {
+            let cleanedTagName = tag.toLowerCase().replace(/[\s.-]/g, "");
+            if (cleanedTagName === "tailwindcss") cleanedTagName = "tailwind";
+            return (
+              <Tag
+                key={`${tag}-${index}`}
+                size="s"
+                variant="neutral"
+                prefixIcon={cleanedTagName}
+              >
+                {tag}
+              </Tag>
+            );
+          })}
         </Row>
-      </Row>
+      )}
+
+      {/* BANNER UTAMA */}
       {post.metadata.images.length > 0 && (
         <Media
           priority
@@ -137,16 +170,12 @@ export default async function Project({
           src={post.metadata.images[0]}
         />
       )}
+
+      {/* ISI ARTIKEL MDX */}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
-        </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
-      </Column>
+
       <ScrollToHash />
     </Column>
   );
