@@ -1,0 +1,53 @@
+---
+title: "ITCareerMatch, an AI-Powered CV and Job Matching Platform"
+startDate: "2025-02"
+endDate: "2026-06"
+summary: "An AI-powered platform that analyzes CV and job compatibility while identifying skill gaps for IT job seekers, built as the capstone project for Coding Camp powered by DBS Foundation."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/cover-03.jpg"
+  - "/images/projects/project-01/cover-04.jpg"
+type: "group"
+tags: ["Node.js", "Express.js", "Redis", "PostgreSQL", "Supabase", "Swagger"]
+link: https://itcareermatch.vercel.app/
+---
+
+## Overview
+
+ITCareerMatch is an AI-powered platform built to analyze the compatibility between a user's CV and available IT job listings, while also identifying relevant skill gaps. The system was designed to deliver an integrated user journey, starting from a pre-login landing experience all the way through to an in-depth analysis of CV-to-job compatibility. It was developed as the capstone project for Coding Camp powered by DBS Foundation by a cross-disciplinary team of six members, consisting of Data Science, Fullstack Web Development, and AI Engineer learning paths. I served as the Backend Developer on the team.
+
+## Key Features
+
+- **Landing and Acquisition Flow**: A landing-page-based acquisition flow designed to attract and onboard new users into the platform.
+- **Real-Time AI Scanning Engine**: A real-time AI scanning engine that evaluates a candidate's CV against job requirements to determine compatibility.
+- **User Authentication**: Secure authentication system to manage user accounts and sessions.
+- **Personalized Recommendation Dashboard**: A dashboard that surfaces job recommendations tailored to each user's profile and analysis results.
+- **Embedded Skill Gap Analysis**: A skill analysis module embedded directly within the job detail page, allowing users to immediately see where their skills fall short for a given role.
+- **Career Chatbot**: A context-aware career chatbot integrated via the Groq SDK to assist users throughout their job search journey.
+- **Analysis History Management**: A history module that lets users track and revisit their past CV analyses.
+- **Internal CV Editor**: An internal CV editor that supports interactive content optimization for users.
+
+## My Role and Contributions
+
+As the Backend Developer, I built the entire backend infrastructure for the platform, including:
+
+- 19 API endpoints documented with Swagger.
+- An asynchronous job queue system using BullMQ and Redis to handle CV analysis processing.
+- Integration with the AI service for CV-job compatibility scoring.
+- The database schema design and implementation on Supabase.
+- The context-aware career chatbot powered by the Groq SDK.
+- Deployment of the backend to Railway.
+
+## Challenges and Learnings
+
+Working within a cross-disciplinary team of six members across three different learning paths required tight coordination between backend, frontend, data science, and AI engineering. The biggest lesson from this project was that defining clear API contracts from the very beginning is what makes cross-team technical collaboration actually work, since it allowed each discipline to build and test their part independently while staying aligned with the rest of the system.
+
+## Outcome
+
+ITCareerMatch is fully production-ready and publicly accessible. The platform successfully integrates AI-driven analysis, a real-time job queue architecture, and a conversational chatbot experience into a single cohesive product.
+
+- Live demo: https://itcareermatch.vercel.app/
+- GitHub (Organization): https://github.com/ITCareerMatch
+- GitHub (Backend repository): https://github.com/ITCareerMatch/Backend-ITCareerMatch
+- Demo video: https://drive.google.com/file/d/1loh_eKklxMI20I3piD_1_Kq7BDiEuXZJ/view
