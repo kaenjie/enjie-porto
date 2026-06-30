@@ -10,7 +10,7 @@ import {
   display,
   person,
   about,
-  work,
+  project,
   certifications,
   gallery,
 } from "@/resources";
@@ -19,7 +19,7 @@ import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({
@@ -140,21 +140,21 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/work"] && (
+              {routes["/project"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
+                      href="/project"
+                      label={project.label}
+                      selected={pathname.startsWith("/project")}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
+                      href="/project"
+                      selected={pathname.startsWith("/project")}
                     />
                   </Row>
                 </>
