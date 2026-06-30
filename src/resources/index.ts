@@ -5,7 +5,7 @@ export {
   home,
   about,
   certifications,
-  work,
+  project,
   gallery,
 } from "./content";
 
@@ -18,7 +18,6 @@ export {
   fonts,
   style,
   schema,
-  sameAs,
   socialSharing,
   effects,
   dataStyle,

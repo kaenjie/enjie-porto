@@ -139,15 +139,6 @@ export type SchemaConfig = {
 };
 
 /**
- * Social links for organization.
- */
-export type SameAsConfig = {
-  threads: string;
-  linkedin: string;
-  discord: string;
-};
-
-/**
  * Social sharing configuration for blog posts.
  */
 export type SocialSharingConfig = {
@@ -177,7 +168,6 @@ export type OnceUIConfig = {
   fonts: FontsConfig;
   style: StyleConfig;
   schema: SchemaConfig;
-  sameAs: SameAsConfig;
   socialSharing: SocialSharingConfig;
   effects: EffectsConfig;
   dataStyle: DataStyleConfig;

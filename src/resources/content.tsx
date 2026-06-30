@@ -6,7 +6,8 @@ import {
   Newsletter,
   Person,
   Social,
-  Work,
+  Project,
+  // Work,
 } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
@@ -86,11 +87,11 @@ const home: Home = {
         <strong className="ml-4">Featured project</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Selected work
+          Read case study
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/project/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
@@ -401,13 +402,11 @@ const certifications: Certifications = {
   ],
 };
 
-const work: Work = {
-  path: "/work",
-  label: "Work",
+const project: Project = {
+  path: "/project",
+  label: "Project",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
@@ -468,6 +467,6 @@ export {
   home,
   about,
   certifications,
-  work,
+  project,
   gallery,
 };
