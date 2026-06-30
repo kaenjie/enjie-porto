@@ -7,7 +7,6 @@ import {
   Person,
   Social,
   Project,
-  // Work,
 } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
@@ -91,7 +90,7 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/project/building-once-ui-a-customizable-design-system",
+    href: "/project/itcareermatch",
   },
   subline: (
     <>
@@ -179,7 +178,7 @@ const about: About = {
           {
             src: "/images/other/annual-meeting.jpeg",
             alt: "Work image",
-            width: 16,
+            width: 14,
             height: 9,
           },
         ],
@@ -219,7 +218,7 @@ const about: About = {
           {
             src: "/images/other/intern-visit.jpeg",
             alt: "Work image",
-            width: 12,
+            width: 14,
             height: 9,
           },
         ],

@@ -2,13 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-type Team = {
-  name: string;
-  role: string;
-  avatar: string;
-  linkedIn: string;
-};
-
 type Metadata = {
   title: string;
   subtitle?: string;
@@ -16,9 +9,11 @@ type Metadata = {
   summary: string;
   image?: string;
   images: string[];
-  tag?: string;
-  team: Team[];
+  tags: string[];
   link?: string;
+  type?: string;
+  startDate?: string;
+  endDate?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -46,9 +41,11 @@ function readMDXFile(filePath: string) {
     summary: data.summary || "",
     image: data.image || "",
     images: data.images || [],
-    tag: data.tag || [],
-    team: data.team || [],
+    tags: data.tags || [],
     link: data.link || "",
+    type: data.type || "",
+    startDate: data.startDate || "",
+    endDate: data.endDate || "",
   };
 
   return { metadata, content };
@@ -71,4 +68,37 @@ function getMDXData(dir: string) {
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
   return getMDXData(postsDir);
+}
+
+export function formatProjectRange(
+  startDate?: string,
+  endDate?: string,
+): string {
+  if (!startDate) return "";
+
+  const formatMonthYear = (dateStr: string) => {
+    const [year, month] = dateStr.split("-");
+    const date = new Date(parseInt(year), parseInt(month) - 1);
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  const startFormatted = formatMonthYear(startDate);
+
+  if (!endDate) {
+    return `${startFormatted} - Present`;
+  }
+
+  const endFormatted = formatMonthYear(endDate);
+
+  const startParts = startFormatted.split(" ");
+  const endParts = endFormatted.split(" ");
+
+  if (startParts[1] === endParts[1]) {
+    return `${startParts[0]} - ${endParts[0]} ${endParts[1]}`;
+  }
+
+  return `${startFormatted} - ${endFormatted}`;
 }
