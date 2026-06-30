@@ -16,7 +16,6 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
-  avatars: { src: string }[];
   link: string;
 }
 
@@ -26,7 +25,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   content,
   description,
-  avatars,
   link,
 }) => {
   return (
@@ -53,35 +51,37 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
+        <Column flex={7} gap="16">
+          {description?.trim() && (
+            <Text
+              wrap="balance"
+              variant="body-default-s"
+              onBackground="neutral-weak"
+            >
+              {description}
+            </Text>
+          )}
+          <Flex gap="24" wrap>
+            {content?.trim() && (
+              <SmartLink
+                suffixIcon="arrowRight"
+                style={{ margin: "0", width: "fit-content" }}
+                href={href}
+              >
+                <Text variant="body-default-s">Read case study</Text>
+              </SmartLink>
             )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read case study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
-        )}
+            {link && (
+              <SmartLink
+                suffixIcon="arrowUpRightFromSquare"
+                style={{ margin: "0", width: "fit-content" }}
+                href={link}
+              >
+                <Text variant="body-default-s">View project</Text>
+              </SmartLink>
+            )}
+          </Flex>
+        </Column>
       </Flex>
     </Column>
   );
