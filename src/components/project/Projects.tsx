@@ -23,13 +23,28 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   const sortedProjects = [...allProjects].sort((a, b) => {
-    const dateA = a?.metadata?.publishedAt
-      ? new Date(a.metadata.publishedAt).getTime()
+    // 1. Ambil endDate dulu, kalau kosong/Present beri nilai terjauh di masa depan agar naik ke atas
+    const dateEndB = b?.metadata?.endDate
+      ? new Date(b.metadata.endDate).getTime()
+      : Infinity;
+    const dateEndA = a?.metadata?.endDate
+      ? new Date(a.metadata.endDate).getTime()
+      : Infinity;
+
+    // Jika endDate berbeda, urutkan berdasarkan endDate terbaru
+    if (dateEndB !== dateEndA) {
+      return dateEndB - dateEndA;
+    }
+
+    // 2. Jika endDate sama (atau sama-sama Present), urutkan berdasarkan startDate terbaru
+    const dateStartB = b?.metadata?.startDate
+      ? new Date(b.metadata.startDate).getTime()
       : 0;
-    const dateB = b?.metadata?.publishedAt
-      ? new Date(b.metadata.publishedAt).getTime()
+    const dateStartA = a?.metadata?.startDate
+      ? new Date(a.metadata.startDate).getTime()
       : 0;
-    return dateB - dateA;
+
+    return dateStartB - dateStartA;
   });
 
   const displayedProjects = range
